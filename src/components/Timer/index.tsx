@@ -18,6 +18,8 @@ const Timer = () => {
     return setCount(count - 1)
   }
 
+  const date = new Date().setUTCHours(135);
+  console.log(date);
 
 
   return(
