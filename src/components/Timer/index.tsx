@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Text, StyleSheet, View, Alert } from 'react-native';
+import moment from 'moment'
+
 import ButtonTimer from '../ButtonTimer';
 
 
@@ -18,13 +20,13 @@ const Timer = () => {
     return setCount(count - 1)
   }
 
-  const date = new Date().setUTCHours(135);
-  console.log(date);
+  const date = moment().format('LT')
+  console.log(date)
 
 
   return(
     <View style={styles.container}>
-      <Text style={styles.hour}>{count}</Text>
+      <Text style={styles.hour}>{date}</Text>
       <View style={styles.buttonContainer}>
         <ButtonTimer onPress={pressToIncrement} title='+'/>
         <ButtonTimer onPress={pressToDecrement} title='-'/>
